@@ -1,0 +1,38 @@
+[package]
+name = "fNET"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "MIT"
+description = "An allocation-free, iced-style .NET CIL and Mono extension disassembler"
+readme = "README.md"
+repository = "https://github.com/valeria-org/fNET"
+homepage = "https://github.com/valeria-org/fNET"
+documentation = "https://docs.rs/fNET"
+publish = ["crates-io"]
+keywords = ["cil", "dotnet", "msil", "disassembler", "no-std"]
+categories = ["no-std", "parser-implementations", "development-tools::debugging"]
+include = [
+    "/src/**", "/examples/**", "/tests/**", "/tools/generate.py",
+    "/research/*.def", "/research/*.txt", "/research/*.md", "/research/*.tsv",
+    "/research/mono-opcode-history-commits.json", "/research/REVISION",
+    "/Cargo.toml", "/Cargo.lock", "/README.md", "/CHANGELOG.md", "/LICENSE", "/NOTICE",
+]
+
+[features]
+default = []
+alloc = []
+std = ["alloc"]
+
+[dependencies]
+
+[lints.rust]
+unsafe_code = "forbid"
+missing_debug_implementations = "deny"
+
+[package.metadata.docs.rs]
+all-features = true
+
+[[example]]
+name = "disasm"
+required-features = ["std"]

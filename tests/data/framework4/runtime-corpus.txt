@@ -1,0 +1,6 @@
+Runtime: .NET 10.0.12
+Assembly: mscorlib.dll
+MVID: 5f1a0e73-9147-408f-b533-0f636e32558c
+Methods: 512
+Instructions: 13743
+Switches: 4

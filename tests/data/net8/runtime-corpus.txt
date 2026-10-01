@@ -1,0 +1,6 @@
+Runtime: .NET 10.0.12
+Assembly: System.Private.CoreLib.dll
+MVID: 5f451036-f2cc-4675-89c5-1a47c64cc5fa
+Methods: 512
+Instructions: 10750
+Switches: 5

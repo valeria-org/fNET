@@ -1,0 +1,76 @@
+name: Release draft
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  packages:
+    if: github.repository == 'valeria-org/fNET'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+          targets: wasm32-unknown-unknown, armv7a-none-eabi
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: cargo check --locked --no-default-features --target wasm32-unknown-unknown
+      - run: cargo check --locked --no-default-features --target armv7a-none-eabi
+      - run: python tools/release.py artifacts --tag "$RELEASE_TAG" --require-tag
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-assets
+          if-no-files-found: error
+          path: target/dist/*
+  compatibility:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            toolchain: "1.85.0"
+          - os: windows-latest
+            toolchain: stable
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: ${{ matrix.toolchain }}
+      - run: cargo test --all-features --locked
+  draft:
+    needs: [packages, compatibility]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-assets
+          path: release-assets
+      - name: Create or update draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        shell: bash
+        run: |
+          if state=$(gh release view "$RELEASE_TAG" --json isDraft --jq .isDraft 2>/dev/null); then
+            if [ "$state" != true ]; then
+              echo "Refusing to change a published GitHub release" >&2
+              exit 1
+            fi
+            gh release edit "$RELEASE_TAG" --title "fNET $RELEASE_TAG" --notes-file release-assets/RELEASE-NOTES.md
+            gh release upload "$RELEASE_TAG" release-assets/* --clobber
+          else
+            gh release create "$RELEASE_TAG" release-assets/* --verify-tag --draft --title "fNET $RELEASE_TAG" --notes-file release-assets/RELEASE-NOTES.md
+          fi

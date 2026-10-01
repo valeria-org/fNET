@@ -1,0 +1,232 @@
+[
+  {
+    "sha": "917620718a3a025622631c8404d0544329395e79",
+    "date": "2001-09-05T09:58:06Z",
+    "message": "\nWed Sep 5 15:54:47 CEST 2001 Paolo Molaro <lupus@ximian.com>\n\n\t* opcode.def: cvs add to reduce build dependencies for\n\tpeople using the snapshots or cvs.\n\nsvn path=/trunk/mono/; revision=719"
+  },
+  {
+    "sha": "f58fc38d66b7cd6705e706f76731e0f65fe80c5f",
+    "date": "2002-07-11T14:41:42Z",
+    "message": "architecture independent marshaling code\n\nsvn path=/trunk/mono/; revision=5701"
+  },
+  {
+    "sha": "cf5a8a4e10dc1843899a385ce3203abe1e62b5d6",
+    "date": "2002-07-18T16:34:46Z",
+    "message": "2002-07-18  Dietmar Maurer  <dietmar@ximian.com>\n\n\t* x86.brg (ARG_OBJ): allow zero sized ARG_OBJ\n\n\t* marshal.c (mono_marshal_get_native_wrapper): we an now return value types\n\nsvn path=/trunk/mono/; revision=5895"
+  },
+  {
+    "sha": "e9af813033456c0be99842ac680444cdfc38bb5a",
+    "date": "2002-07-19T13:29:27Z",
+    "message": "2002-07-19  Dietmar Maurer  <dietmar@ximian.com>\n\n\t* marshal.c (emit_ptr_to_str_conv): marshal object as structs\n\t(emit_str_to_ptr_conv): marshal object as structs\n\n\t* metadata.c (mono_type_to_unmanaged): marshal object as structs\n\nsvn path=/trunk/mono/; revision=5915"
+  },
+  {
+    "sha": "33190343e99ae46041b4e836875870731b720a16",
+    "date": "2002-07-24T09:52:06Z",
+    "message": "2002-07-24  Dietmar Maurer  <dietmar@ximian.com>\n\n\t* marshal.c (mono_string_utf8_to_builder): impl.\n\t(mono_string_builder_to_utf8): impl.\n\t(mono_marshal_get_native_wrapper): impl. StringBuilder marshaling\n\nsvn path=/trunk/mono/; revision=6118"
+  },
+  {
+    "sha": "d5f372534b3b4583587faa47ddee1804bc496c7e",
+    "date": "2002-08-01T14:17:18Z",
+    "message": "2002-08-01  Dietmar Maurer  <dietmar@ximian.com>\n\n\t* x86/tramp.c (mono_create_trampoline): also push the value type pointer for\n\tmethods returning value types.\n\t(mono_create_method_pointer): support valuetype returns.\n\n\t* interp.c (ves_pinvoke_method): do not call stackval_from_data if the result\n\tis a value type.\n\nsvn path=/trunk/mono/; revision=6311"
+  },
+  {
+    "sha": "b621d08f4a418054075e53c74cef4a487cba857b",
+    "date": "2003-01-29T12:59:13Z",
+    "message": "2003-01-29  Dietmar Maurer  <dietmar@ximian.com>\n\n\t* jit.c (mono_analyze_stack): impl. CEE_MONO_LDNATIVEOBJ\n\nsvn path=/trunk/mono/; revision=11009"
+  },
+  {
+    "sha": "47e7b594aad83ca07f487e1e1bfb3411b4de314c",
+    "date": "2003-05-29T11:02:35Z",
+    "message": "\n\nThu May 29 12:52:40 CEST 2003 Paolo Molaro <lupus@ximian.com>\n\n\t* opcode.def, cil-opcodes.xml: fix opcode entries.\n\nsvn path=/trunk/mono/; revision=14990"
+  },
+  {
+    "sha": "2c5e5e37073cb6aec56e3ce7211399580e4893b1",
+    "date": "2003-07-25T17:28:17Z",
+    "message": "\n\nFri Jul 25 19:06:27 CEST 2003 Paolo Molaro <lupus@ximian.com>\n\n\t* interp.c: updates for new instructions.\n\nsvn path=/trunk/mono/; revision=16677"
+  },
+  {
+    "sha": "6d80e780be940b906044ff2777f32e73e1e3cbff",
+    "date": "2004-03-05T03:44:06Z",
+    "message": "\t* opcode.def, cil-opcodes.xml: Added two new opcodes for type checking:\n\tmono_cisinst and mono_ccastclass.\n\nsvn path=/trunk/mono/; revision=23727"
+  },
+  {
+    "sha": "becfd57d95eb36c84953ee9cc6d640614f9b4cbe",
+    "date": "2004-05-11T17:17:49Z",
+    "message": "2004-05-11  Zoltan Varga  <vargaz@freemail.hu>\n\n\t* opcode.def: Add mono_func2.\n\nsvn path=/trunk/mono/; revision=27121"
+  },
+  {
+    "sha": "f284ad8dc662c6e5dc1c68c0d08926c927d844bf",
+    "date": "2004-05-20T12:48:40Z",
+    "message": "2004-05-20  Zoltan Varga  <vargaz@freemail.hu>\n\n\t* opcode.def: Add mono_save_lmf and mono_restore_lmf.\n\nsvn path=/trunk/mono/; revision=27747"
+  },
+  {
+    "sha": "06093c36a5618d1c40a265b40fbf421153ae50be",
+    "date": "2004-07-08T17:07:10Z",
+    "message": "2004-07-08  Zoltan Varga  <vargaz@freemail.hu>\n\n\t* opcode.def: Remove CEE_MONO_FUNC and related opcodes, replace them\n\twith CEE_MONO_ICALL.\n\nsvn path=/trunk/mono/; revision=30885"
+  },
+  {
+    "sha": "04f9de7dd9d1b5f29ef88c84d1e10dec94316ea7",
+    "date": "2004-08-05T16:31:52Z",
+    "message": "* cil-opcodes.xml:\n* opcode.def: Rename \"stelem\" to \"stelem.any\" and \"ldelem\" to \"ldelem.any\".\n\n* verify.c: Renamed CEE_STELEM to CEE_STELEM_ANY and CEE_LDELEM to CEE_LDELEM_ANY.\n\n* mini.c: Renamed CEE_STELEM to CEE_STELEM_ANY and CEE_LDELEM to CEE_LDELEM_ANY.\n\nr=lupus\n\nsvn path=/trunk/mono/; revision=31939"
+  },
+  {
+    "sha": "4df43ed84c5c37ef1c8c860a7ba16fcb83e165cf",
+    "date": "2005-01-03T22:23:03Z",
+    "message": "2005-01-03  Zoltan Varga  <vargaz@freemail.hu>\n\n\t* cil-opcodes.xml opcode.def: Add mono_classconst.\n\nsvn path=/trunk/mono/; revision=38293"
+  },
+  {
+    "sha": "b94c7f565cfac600e187edc32cb72b8a26b5d6e0",
+    "date": "2005-02-20T14:06:23Z",
+    "message": "2005-02-20  Zoltan Varga  <vargaz@freemail.hu>\n\n\t* cil-opcodes.xml opcode.def: Correct definition of mono_classconst and\n\tadd mono_not_taken which is used for branch prediction hints.\n\nsvn path=/trunk/mono/; revision=40931"
+  },
+  {
+    "sha": "9bc0ae3a656437c31e9bca1efe44ab70892d566e",
+    "date": "2007-09-11T12:41:35Z",
+    "message": "\n\nTue Sep 11 15:09:01 CEST 2007 Paolo Molaro <lupus@ximian.com>\n\n\t* cil-opcodes.xml opcode.def: added custom opcode used to access\n\truntime thread local storage.\n\n\nsvn path=/trunk/mono/; revision=85632"
+  },
+  {
+    "sha": "659153f6c50ca20bdc7704535b416519f6825dd8",
+    "date": "2008-06-06T10:46:48Z",
+    "message": "2008-06-06  Jb Evain  <jbevain@novell.com>\n\n\t* cil-opcodes.xml: constrained. is of type InlineType.\n\t* opcode.def: re-generate.\n\n\nsvn path=/trunk/mono/; revision=105146"
+  },
+  {
+    "sha": "983169b1fc2b35b86977ccd0b6d875894f632680",
+    "date": "2008-08-08T17:07:40Z",
+    "message": "2008-08-08  Zoltan Varga  <vargaz@gmail.com>\n\n\t* cil-opcodes.xml: Add an 'icall_addr' opcode.\n\nsvn path=/trunk/mono/; revision=109986"
+  },
+  {
+    "sha": "ac5d999caff1a6d692002fd4127f9cc2e32b20d8",
+    "date": "2009-07-31T00:04:16Z",
+    "message": "2009-07-30  Rodrigo Kumpera  <rkumpera@novell.com>\n\n\tcil-opcodes.xml: Fix naming of stelem and ldelem to be\n\tthe same of the spec. Fix stack effect of stelem. Change\n\ttype of constrained and readonly prefixes.\n\n2009-08-30  Rodrigo Kumpera  <rkumpera@novell.com>\n\n\t* method-to-ir.c: Fix naming of stelem and ldelem.\n\n2009-08-30  Rodrigo Kumpera  <rkumpera@novell.com>\n\n\t* verify.c: Fix naming of stelem and ldelem.\n\nsvn path=/trunk/mono/; revision=139135"
+  },
+  {
+    "sha": "dc22b9cbee485c9fa9b9c2a68177934dcc1d0959",
+    "date": "2009-09-20T12:22:49Z",
+    "message": "2009-09-20  Zoltan Varga  <vargaz@gmail.com>\n\n\t* cil-opcodes.xml: Add mono_dyn_call opcode.\n\nsvn path=/trunk/mono/; revision=142269"
+  },
+  {
+    "sha": "7087b55e814035f001c0256b1bf764a56e21d6f3",
+    "date": "2011-06-12T04:29:48Z",
+    "message": "Add new mono byte code for memory barriers"
+  },
+  {
+    "sha": "34b476dc6d68301cebda42846f4d0d396d43e9bd",
+    "date": "2011-10-04T22:29:27Z",
+    "message": "Fix the build"
+  },
+  {
+    "sha": "5d8b1ad68d1afa7747b83c97b690d9f81a55c0e8",
+    "date": "2012-03-11T16:53:43Z",
+    "message": " Move the thread attach code for native-to-managed wrappers to method_to_ir (), instead of emitting it by hand for each architecture. Also make it save/restore the current domain. Fixes #3623."
+  },
+  {
+    "sha": "6285a057a248e65301def835dfc5971e6df29a39",
+    "date": "2013-03-06T17:49:46Z",
+    "message": "Modify the way calls to icalls are made from the icall wrappers. Previously, the address to call was encoded in an OP_PCONST, and various pieces of code looked up the value in the jit icall table to see if it was an icall address. With the new approach, the fact that this is an icall address is explicit through the JIT."
+  },
+  {
+    "sha": "2735588c0c112253f3f75478621ef8a9d135278f",
+    "date": "2013-10-18T15:54:01Z",
+    "message": "[runtime] Clean up the usage of the CEE_MONO_TLS opcode in wrappers. Instead of passing it the tls offset, pass one of the TLS_KEY_ constants defined in mono-tls.h, and resolve the offset in the JIT. This allows these wrappers to work with AOT."
+  },
+  {
+    "sha": "c8b9d1e04f5e316bb45872b8919860468d36d394",
+    "date": "2015-02-18T23:23:32Z",
+    "message": "[jit] Handle pointers for aot separately from CEE_MONO_LDPTR"
+  },
+  {
+    "sha": "149534c76ca3a70d8b39ac4a01c84e6fc08a768c",
+    "date": "2015-02-20T02:13:03Z",
+    "message": "[aot] Add aot support for write barrier.\n\nWe emit two write barriers, for the case of the concurrent and non-concurrent collector in the mscorlib image. All calls to the write barrier are made through the plt, calls which are resolved according to the GC configuration at runtime."
+  },
+  {
+    "sha": "7cb2c544b441edfd92b290c982aa88dd33044c5b",
+    "date": "2015-05-14T20:27:01Z",
+    "message": "[runtime] Regenerate opcodef.def.\n\nNote: Don't modify this file by hand."
+  },
+  {
+    "sha": "85581ff1bb8b28141ec1823b7371efa5a14551bb",
+    "date": "2015-11-09T20:12:28Z",
+    "message": "[aot] Don't hardcode the nursery size in aot write barriers\n\nIt can be passed at runtime in the nursery-size option of MONO_GC_PARAMS environment variable.\n\nFixes #35414"
+  },
+  {
+    "sha": "36bc196bde618a699e06d1be785661af5c0f84ef",
+    "date": "2016-01-07T18:08:26Z",
+    "message": "[llvmonly] Change the way delegate invokes are implemented, use a new CEE_MONO_CALLI_EXTRA_ARG il instruction so most of the logic is in the JIT, not in marshal.c."
+  },
+  {
+    "sha": "cf61ae311e758accf3a166ae58c8ebb163ec89ba",
+    "date": "2016-05-18T22:00:56Z",
+    "message": "[coop] Generate native-to-managed thread attaching in marshal"
+  },
+  {
+    "sha": "755056dd25052d1105aa64707775d60ca82ac62f",
+    "date": "2016-04-14T02:12:57Z",
+    "message": "[gc] Register a critical region when executing managed allocators.\n\nPreviously, if we stopped a thread and it had a stack looking like this:\n\n    ...\n    profiler_signal_handler\n    <signal handler called>\n    managed_allocator\n    ...\n\nWe would fail to identify the fact that we've just interrupted a thread that's\nin a managed allocator (uninterruptible code) because we only look at the very\nlatest instruction pointer of the thread, which will be pointing into\nprofiler_signal_handler or some other function called by it. So we would\nhappily continue along with the STW process and proceed to doing the actual GC,\nwhere we would see a broken heap.\n\nWe could solve this by unwinding the stack and checking all frames, but that's\ncomplicated and error-prone. Instead, register a critical region while the\nmanaged allocator. This way, if we don't identify it by instruction pointer, we\nwill identify it by the fact that the thread is in a critical region."
+  },
+  {
+    "sha": "e53f07efa2a11dc76e42e49bc927fcf27409bb92",
+    "date": "2016-07-14T18:40:58Z",
+    "message": "PInvoke methods using SetLastError get dropped on Windows x64 full AOT.\n\nThis happens because current implementation is doing a direct call to Win32\nGetLastError in order to get the value before it get clobbered by the icall\nsetting the last error value in mono. When running AOT all constructs that tries\nto call a method using a direct address will be dropped since that will not work\nin full AOT. This results in incomplete compiled libraries causing runtime exceptions\nin full AOT.\n\nThe fix on Windows x64 is to introduce a new OP code, GET_LAST_ERROR that will\nretrieve the last error without clobbering it in the process. This is done by\nemitting code reading the value directly from the TEB (thread environment block)\nand will be lowered to just a move from the segment register holding the TEB data\nstructure on Windows x64. This is how GetLastError is doing this as well, but since\nwe won’t be able to call the method in a “safe” way in full AOT, using the segment\nregister directly will solve the issue. We use the segment register for accessing TLS,\nso we already relying on the TEB structure.\n\nNOTE, this will only be applied to Windows x64, full AOT for now."
+  },
+  {
+    "sha": "5ae220a3b24004b73a89d5b806b68576a38922a4",
+    "date": "2016-07-15T08:19:37Z",
+    "message": "Smaller formatting adjustments based on feedback."
+  },
+  {
+    "sha": "45837e1a5aeabb3ea3c17391e70e69e4618fe825",
+    "date": "2017-03-30T11:32:44Z",
+    "message": "Add beginnings of mixed code execution support (#4613)\n\n* [interp] Fix a few problems exposed by the iltests.exe test suite.\r\n\r\nThe ENDFINALLY opcode should empty the stack. The INITBLK opcode is two bytes.\r\n\r\n* [interp] Store the MonoMethod->RuntimeMethod mapping in a separate hash in MonoJitDomainInfo instead of using MonoDomain.jit_code_hash, the latter contains MonoMethod->MonoJitInfo mappings. Also avoid holding the domain lock while creating the RuntimeMethod structure.\r\n\r\n* [interp] Add a mono_jit_compile_method_jit_only () function which always compiles its argument using the JIT/AOT.\r\n\r\n* [interp] Print a warning when --interpreter is used with a runtime compiled without ENABLE_INTERPRETER.\r\n\r\n* [interp] Fix the size of the icall enter trampoline on amd64. Fix some formatting issues.\r\n\r\n* [interp] Add support for calling JITted code from the interpreter. This uses the gsharedvt_out wrappers used by bitcode to reduce the number of possible calling conventions since all arguments and the return value are passed/returned by value. Not enabled yet.\r\n\r\n* [interp] Add a --interp= argument which allows passing of options to the interpreter. Add a 'jit=' option which is used to control the set of types whose methods will be called by exiting the interpreter.\r\n\r\n* [interp] Add tests for mixed mode execution.\r\n\r\n* [interp] Add support for calling interpreter code from JITted code.\r\n\r\n* [interp] add mixedmode target to CI\r\n\r\n* Revert a debug change.\r\n\r\n* [runtime] Fix the locking in the gsharedvt/interp wrapper creation functions.\r\n\r\n* [interp] Implement support for interp->jit calls with more than 8 arguments."
+  },
+  {
+    "sha": "ea4e4a9ef6fc42570a23026adbe826cf7248290e",
+    "date": "2017-06-22T15:15:35Z",
+    "message": "[runtime] New profiler API.\n\n* Profiler callbacks can now be changed and disabled at any point.\n* API users no longer have to set event flags. The API instead uses a counter\n  internally for each type of callback.\n* Filter functions for enter/leave instrumentation can be installed, and they\n  can choose whether to instrument the prologue, epilogue, or both.\n* Managed allocators can now be instrumented for allocation profiling.\n* A profiler must now declare that it wishes to use allocation profiling and/or\n  sampling in its init function.\n* Sampling parameters can now be changed at any point, and the sampling thread\n  can be put into an idle mode when no sampling is needed.\n* Only one profiler can have control over the sampling parameters. Whichever\n  profiler enables sampling first gets control.\n* Adding new events is now very easy: One line in profiler-events.h and one\n  line wherever the event should be raised.\n* Lifted the restriction that enter/leave instrumentation would cause an abort\n  in full AOT mode.\n* Support for call chain sampling has been removed.\n* Support for the old, platform-specific code coverage mode has been removed.\n* The new profiler module entry point is mono_profiler_init. If a module has\n  a mono_profiler_startup symbol (the old entry point), a warning will be\n  printed and the module won't be loaded.\n* Updated the profiler test suite to work with instrumented managed allocators."
+  },
+  {
+    "sha": "822f75e8c7a4a0bcdfd7f143d46fd95066b454eb",
+    "date": "2018-05-11T17:06:36Z",
+    "message": "Fix sizing of cee_switch, mono_dyn_call, mono_icall. (#8673)\n\n* Fix mono_icall and mono_dyn_call operands in opcode.def.\r\nThis might require cpan install XML::Parser, or disable\r\nthe generation of opcode.def in Makefile.am.\r\n\r\n* Fix sizing of switch instructions: 5 + 4 * n, not 4 + 4 * n."
+  },
+  {
+    "sha": "298aa78a47c6f027b7083c374d4d2868717a7295",
+    "date": "2018-05-16T18:41:12Z",
+    "message": "method_to_ir: factor out operand decoding and  stack checking (#8718)\n\n* method_to_ir: Factor out operand decoding, including of constants.\r\n* Cleanup unused file.\r\n* Use MonoOpcodeEnum_Invalid instead of (MonoOpcodeEnum)-1.\r\n* Move CHECK_STACK and CHECK_STACK_OVF mostly to central place, except variable\r\nones like call/ret/newobj.\r\n* No _Static_assert on msvc."
+  },
+  {
+    "sha": "1a91bb9939838602f6c2cb89f414b5018ae763eb",
+    "date": "2018-06-09T14:55:23Z",
+    "message": "[runtime] Store the interpreter method invoked by the delegate in MonoDelegate.interp_method, make MonoDelegate.method_ptr always point to a JIT callable entry point. (#9019)\n\n* [runtime] Add an 'interp_method' field to MonoDelegate.\r\n\r\n* [runtime] Add a MONO_LD_DELEGATE_PTR jit opcode which is used to load the method ptr from a delegate, so the JIT and interpreter could have a different implementation.\r\n\r\n* [runtime] Store the interpreter method invoked by the delegate in MonoDelegate.interp_method, make MonoDelegate.method_ptr always point to a JIT callable entry point.\r\n\r\n* [interp] Avoid sharing pinvoke and non-pinvoke signatures in mini_get_interp_in_wrapper ().\r\n\r\n* [interp] Fix interp_get_remoting_invoke (), it receives a interp entry trampoline as well.\r\n\r\n* [interp] Store remoting invokes into interp_method in delegates.\r\n\r\n* [interp] Handle compilation failures in do_jit_icall (). Handle calls to delegates created in JITted code.\r\n\r\n* [jit] Add a 'aot-skip=' MONO_DEBUG option to skip loading the Nth aot loadable method, useful for forcing mixed mode transitions during testing.\r\n\r\n* [jit] Add tests for fullaot+interp mode\r\n\r\nThe tests work by injecting interp-jit transitions in varying locations controlled by the MONO_DEBUG=aot-skip= option.\r\n\r\n* [interp] Avoid races when caching method pointers. Fix wasm support.\r\n\r\n* Revert \"[interp] Avoid races when caching method pointers. Fix wasm support.\"\r\n\r\nThis reverts commit 0f78c230b5102d625c300a4e1c6eaf97ad055dd5.\r\n\r\n* [interp] stub native-to-managed on platforms where it is not working\r\n\r\n* [ci] add fullaotmixed-regression step"
+  },
+  {
+    "sha": "832e31227b921b383aec433d7ca161f322fa7249",
+    "date": "2018-06-15T06:00:12Z",
+    "message": "Restore the ability to regenerate opcode.def form Perl/XML, though CI cannot and does not. (#9111)"
+  },
+  {
+    "sha": "766dacef2240ac046723e80aaba2cfbbf9caad90",
+    "date": "2018-09-12T18:57:54Z",
+    "message": "Drop JIT attach: use coop attach in mini, aot and interp (#10545)\n\n* [metadata] Hack - get mono_use_interpreter from metadata\r\n\r\nDon't use this, it's a mistake.  The granularity is all wrong, for one: in the\r\nfuture the interpreter may not be an all-or-nothing deal.\r\n\r\n* [marshal] Don't emit CEE_MONO_JIT_ATTACH except for interpreter\r\n\r\nAlways use the mono_threads_coop_attach/mono_threads_coop_detach pair.\r\n\r\n* [aot] Drop MONO_PATCH_INFO_JIT_THREAD_ATTACH\r\n\r\nWe always emit the mono_threads_attach_coop icalls now.\r\n\r\nBump MONO_AOT_FILE_VERSION\r\n\r\n* [mini] mark mono_jit_thread_attach external only\r\n\r\nIt's used by Xamarin.Mac and possibly other embedders.\r\n\r\nInterpreter still used mono_jit_thread_attach_interp until it's fixed to work\r\nwith coop.\r\n\r\nThere shouldn't be any other callers.\r\n\r\n* [interp] Add a thread attach EE callback\r\n\r\nUse it to set the interpreter thread context on the JIT tls value\r\n\r\n* [marshal] Always emit mono_threads_attach_coop instead of CEE_MONO_JIT_ATTACH\r\n\r\nUse the coop icall for the interpreter, too.\r\n\r\n* [interp] Drop MINT_MONO_JIT_ATTACH and detach opcodes\r\n\r\n* [metadata] Drop CEE_MONO_JIT_ATTACH and detach opcodes\r\n\r\n* Revert \"[metadata] Hack - get mono_use_interpreter from metadata\"\r\n\r\nThis reverts commit c3d2f488b824dcdfa261f8292013c805740f353f.\r\n\r\n* [mini] Drop unused mini_jit_thread_attach_interp\r\n\r\nIt was a temporary workaround for the interpreter; no longer needed.\r\n\r\n* [coop] Switch to GC Safe in mono_jit_thread_attach.\r\n\r\nIt's an external-only function that's not called by the runtime on any\r\nthreads.  So the only calls are explicit uses by Mono API clients.  Leave the\r\nthread in GC Safe mode and leave it to the n2m invoke wrappers or MONO_API\r\nentry points to switch to GC Unsafe.\r\n\r\n* [interp] Add MINT_MONO_THREADS_ATTACH_COOP opcode\r\n\r\nBecause this icall can be called from detached threads, don't go through\r\ndo_icall () which needs initialized tls keys\r\n\r\n* fixup for c++ build\r\n\r\n* fixup indentation and comments\r\n\r\n* fixup C++ a bit more\r\n\r\n* [mini] Bump MONO_EE_API_VERSION\r\n\r\n* Revert \"[interp] Add a thread attach EE callback\"\r\n\r\nThis reverts commit 8a343d6ce15f0475a62936f28264f638ebf0344f.\r\n\r\n* [interp] sync jittls context before entering EH machinery"
+  },
+  {
+    "sha": "2cee7211900fda7f3a19171dc6f484520dce820f",
+    "date": "2018-09-18T20:03:56Z",
+    "message": "[runtime] Add mono_rethrow opcode"
+  },
+  {
+    "sha": "b1b61d7cb7f580f5e5438a756ef3e67a5a832eeb",
+    "date": "2019-07-05T08:30:17Z",
+    "message": "Interpreter reads last error to late after pinvoke. (#15571)\n\n* Interpreter reads last error to late after pinvoke.\r\n\r\nThis could lead to clobbered last error since interpreter loop needs to\r\nrun two additional IL instructions in order to read out the value. This works\r\non JIT since the lowering saving the last error will happen right after\r\npinvoke.\r\n\r\nThis fix makes sure interpreter will get needed information to read out\r\nlast error right after pinvoke (if requested).\r\n\r\nIt adds a new IL prefix issued in managed->native wrapper that will tell\r\ncodegen (and interpreter) that upcoming calli instruction needs to save\r\nlast error, meaning that it could be done right after issuing the call,\r\nno need to run any additional IL instructions to do that work, closing\r\nthe gap between the return of pinvoke call and save of last error.\r\n\r\nShould fix, https://github.com/mono/mono/issues/15541.\r\n\r\n* Optimize emit_get_last_error."
+  },
+  {
+    "sha": "c4136ebd94567bb29557c94e7480e24fe72ffdac",
+    "date": "2019-11-26T03:31:32Z",
+    "message": "[interp] Non-recursive interpreter (#16461)\n\n* Aling alloca_size to 8.\r\n\r\n* Prevent some false pinning in the monitor-resurrection.cs test when using the non-recursive interpreter.\r\n\r\n* [runtime] Add a mono_compiler_barrier () function.\r\n\r\n* Add a MONO_GET_SP opcode to pass to enter/exit_gc_safe_region, ldloca might not return a native stack address with the interpreter.\r\n\r\n* Add an interpreter/gc callback to mark the interpreter stack.\r\n\r\n* Copy only an integer in ENDFILTER.\r\n\r\n* Add a native_stack_addr field to InterpFrame so the EH code has something to compare against native stack addresses.\r\n\r\n* Add a FrameStack structure to allow allocation of InterpFrame structures and stack data outside the native stack.\r\n\r\n* Allocate InterpFrames/stack data from a frame stack instead of the native stack.\r\n\r\n* Make some calls non-recursive.\r\n\r\n* Remove an assert.\r\n\r\n* Use non-recursive calls in CALLVIRT_FAST as well.\r\n\r\n* Fix stack size allocation for vararg calls.\r\n\r\n* Add some micro optimizations to the calling code.\r\n\r\n* Add more micro optimizations.\r\n\r\n* [dtest] disable Crash test on interpreter\r\n\r\n* Add some implicit conversions to STSFLD to fix a corefx test failure.\r\n\r\n* Disable the new test."
+  },
+  {
+    "sha": "a7aa383fc676fe1e7638a6857f0ca6fa4fc49f8a",
+    "date": "2020-08-10T23:54:40Z",
+    "message": "[runtime] If the initial pinvoke lookup fails, emit some code inside the managed-to-native wrapper to retry to lookup on every call until it succeeds. (#20187)\n\nFixes dotnet/runtime#35219\r\n\r\nCo-authored-by: vargaz <vargaz@users.noreply.github.com>"
+  }
+]
